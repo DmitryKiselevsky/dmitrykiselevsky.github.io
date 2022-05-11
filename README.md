@@ -1,2 +1,2 @@
 # dmitrykiselevsky.github.io
-Online school website
+Simple website
