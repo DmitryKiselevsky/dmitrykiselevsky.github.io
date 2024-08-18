@@ -1,1 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Дмитрий Киселевский</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .skills span {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .projects,
+        .experience {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .projects li,
+        .experience li {
+            margin-bottom: 15px;
+        }
+
+        .projects li h3,
+        .experience li h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .projects li p,
+        .experience li p {
+            margin: 5px 0 0;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .education-info {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Дмитрий Киселевский</h1>
+
+        <div class="section contact-info">
+            <h2>Контактная информация</h2>
+            <p>Телефон: +375(29)7732110</p>
+            <p>Email: <a href="mailto:kiselefsky@gmail.com">kiselefsky@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/dmitry-kiselevsky-730b1286" target="_blank">linkedin.com/in/dmitry-kiselevsky-730b1286</a></p>
+        </div>
+
+        <div class="section about">
+            <h2>Обо мне</h2>
+            <p>Опытный разработчик программного обеспечения с более чем 5-летним опытом создания и поддержания приложений на C#, Delphi и микросервисов. Специализируюсь на разработке решений для автоматизации, встраиваемых систем и API. Ищу возможность применить свои знания в проектах, связанных с научными вычислениями и промышленной автоматизацией.</p>
+        </div>
+
+        <div class="section skills">
+            <h2>Навыки</h2>
+            <div>
+                <span>C#</span>
+                <span>.NET Framework</span>
+                <span>Delphi</span>
+                <span>Python</span>
+                <span>Microservices</span>
+                <span>REST API</span>
+                <span>SQL</span>
+                <span>Arduino</span>
+                <span>Node.js</span>
+                <span>React</span>
+            </div>
+        </div>
+
+        <div class="section experience">
+            <h2>Опыт работы</h2>
+            <ul>
+                <li>
+                    <h3>Software Engineer - RUE Beltamozhservice, Минск (январь 2022 – по настоящее время)</h3>
+                    <p>Разработал и поддерживаю приложения для управления парковкой (Delphi). Разработал приложение для криптографической подписи XML-документов (C#). Провел рефакторинг приложения с Delphi на Node.js+React. Создал REST API и реализовал протоколы аутентификации (JWT) для безопасного обмена данными.</p>
+                </li>
+                <li>
+                    <h3>Dynamic/Axapta Developer - CS&IE Data Consulting GmbH, Минск (сентябрь 2021 – декабрь 2021)</h3>
+                    <p>Оптимизировал BI-решения, разработал автоматизированные скрипты для упрощения рутинных задач (Python, PowerShell), взаимодействовал с командами для решения проблем с данными.</p>
+                </li>
+                <li>
+                    <h3>Engineer - RUE Belpost, Минск (ноябрь 2012 – июль 2021)</h3>
+                    <p>Создал систему автоматизированного мониторинга, позволяющую отслеживать текущее выполнение задач и выводить статистику на дашборд или в Excel (PHP, MySQL). Разработал шаблоны на языке Postscript для промышленных печатных систем. Реализовал систему управления складом и генерации документов (Delphi).</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section projects">
+            <h2>Ключевые проекты</h2>
+            <ul>
+                <li>
+                    <h3>Микроклимат-контроль для теплицы</h3>
+                    <p>Разработка системы автоматизации для управления освещением, поливом и вентиляцией с использованием микроконтроллеров и встроенных систем.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section education">
+            <h2>Образование</h2>
+            <div class="education-info">
+                <p><strong>Белорусский государственный университет информатики и радиоэлектроники</strong> (сентябрь 2014 – июль 2019)</p>
+                <p>Инженер электронных систем, специализация в области мобильных программируемых систем.</p>
+            </div>
+            <div class="education-info">
+                <p><strong>Белорусский государственный экономический университет</strong> (сентябрь 2000 – июнь 2006)</p>
+                <p>Квалификация: товаровед, специалист по экспертизе товаров.</p>
+            </div>
+        </div>
+
+        <div class="section hobbies">
+            <h2>Хобби</h2>
+            <p>Фотография, велосипед, походы, кино.</p>
+        </div>
+    </div>
+</body>
+
+</html>
