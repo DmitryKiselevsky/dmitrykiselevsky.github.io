@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Dmitry Kiselevsky</title>
+    <title>CV - Dmitry Kiselevsky</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,6 +27,12 @@
             text-align: center;
             color: #007BFF;
         }
+		
+		.jobtitle {
+            text-align: center;
+            color: #333333;
+			font-size: 1.5em;
+        }
 
         .section {
             margin-bottom: 20px;
@@ -38,6 +44,8 @@
             margin-bottom: 10px;
             font-size: 20px;
         }
+
+
 
         ul {
             padding-left: 20px;
@@ -62,7 +70,37 @@
             font-size: 14px;
         }
 
-        .projects,
+        .language-buttons {
+            text-align: left;
+            margin-bottom: 16px;
+        }
+
+        .language-buttons button {
+            padding: 8px 12px;
+            margin: 0 5px;
+            font-size: 12px;
+            cursor: pointer;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .language-buttons button:hover {
+            background-color: #0056b3;
+        }
+		
+		.skills span {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 5px 10px;
+            margin: 5px 5px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+		
+		.projects,
         .experience {
             list-style-type: none;
             padding: 0;
@@ -85,90 +123,236 @@
             font-size: 15px;
             color: #555;
         }
-
-        .education-info {
+		
+		.education-info {
             margin-bottom: 5px;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Dmitry Kiselevsky</h1>
+	<div id="root"></div>
 
-        <div class="section contact-info">
-            <h2>Contact Information</h2>
-            <p>Phone: +375(29)7732110</p>
-            <p>Email: <a href="mailto:kiselefsky@gmail.com">kiselefsky@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/dmitry-kiselevsky-730b1286" target="_blank">linkedin.com/in/dmitry-kiselevsky-730b1286</a></p>
-        </div>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+	<script>
+        const { useState } = React;
 
-        <div class="section about">
-            <h2>About Me</h2>
-            <p>Experienced software developer with over 5 years of expertise in creating and maintaining C#, Delphi applications and microservices. Specialized in developing automation solutions, embedded systems, and APIs. Seeking opportunities to apply my knowledge in projects related to scientific computing and industrial automation.</p>
-        </div>
+        function App() {
+            const [language, setLanguage] = useState('EN');
 
-        <div class="section skills">
-            <h2>Skills</h2>
-            <div>
-                <span>C#</span>
-                <span>.NET Framework</span>
-                <span>Delphi</span>
-                <span>Python</span>
-                <span>Microservices</span>
-                <span>REST API</span>
-                <span>SQL</span>
-                <span>Arduino</span>
-                <span>Node.js</span>
-                <span>React</span>
-            </div>
-        </div>
+            const content = {
+                EN: {
+                    name: "Dmitry Kiselevsky",
+					jobtitle: "Software Engineer",
+                    contact: {
+                        title: "Contact Information",
+                        phone: "Phone: +48 453 073 737",
+						messengers: "Viber, WhatsUp: +375(29)7732110",
+                        email: "Email: kiselefsky@gmail.com",
+                        linkedin: "LinkedIn: linkedin.com/in/dmitry-kiselevsky-730b1286"
+                    },
+                    about: {
+                        title: "About Me",
+                        text: "Experienced software developer with over 5 years of expertise in creating and maintaining C#, Delphi applications and microservices. Specialized in developing automation solutions, embedded systems, and APIs. Seeking opportunities to apply my knowledge in projects related to scientific computing and industrial automation."
+                    },
+					skills: {
+						title: "Skills"
+					},
+					hobbies: {
+						title: "Hobbies",
+						text: "Photography, cycling, hiking, cinema."
+					},
+					experience: [
+                        {
+                            title: "Software Engineer - RUE Beltamozhservice, Minsk (January 2022 – April 2024)",
+                            responsibilities: "Developed and maintained applications for parking management (Delphi). Created an application for cryptographic XML document signing (C#). Redesigned an application from Delphi to Node.js+React. Developed REST APIs and implemented JWT authentication protocols for secure data exposure."
+                        },
+                        {
+                            title: "Dynamic/Axapta Developer - CS&IE Data Consulting GmbH, Minsk (September 2021 – December 2021)",
+                            responsibilities: "Optimized BI solutions, developed automated scripts to simplify routine tasks (Python, PowerShell), and collaborated with teams to resolve data-related issues."
+                        },
+                        {
+                            title: "Engineer - RUE Belpost, Minsk (November 2012 – July 2021)",
+                            responsibilities: "Created an automated monitoring system to track ongoing work and display statistics on a dashboard or export data to Excel (PHP, MySQL). Developed PostScript templates for industrial printing systems used by banks and mobile operators. Built warehouse management and automated document generation systems (Delphi)."
+                        }
+					],
+					experiencetitle: "Work Experience",
+					educationtitle: "Education",
+					education: [
+						{
+                            title: "Belarusian State University of Informatics and Radioelectronics (September 2014 – July 2019)",
+                            specializing: "Engineer of Electronic Systems, specializing in mobile programmable systems."
+                        },
+                        {
+                            title: "Belarus State Economic University (September 2000 – June 2006)",
+                            specializing: "Qualification: Merchandise Science and Product Expertise."
+                        }
+					]
+                },
+                RU: {
+                    name: "Дмитрий Киселевский",
+					jobtitle: "Программист",
+                    contact: {
+                        title: "Контактная информация",
+                        phone: "Phone: +48 453 073 737",
+						messengers: "Viber, WhatsUp: +375(29)7732110",
+                        email: "Email: kiselefsky@gmail.com",
+                        linkedin: "LinkedIn: linkedin.com/in/dmitry-kiselevsky-730b1286"
+                    },
+                    about: {
+                        title: "Обо мне",
+                        text: "Опытный разработчик программного обеспечения с более чем 5-летним опытом создания и поддержания приложений на C#, Delphi и микросервисов. Специализируюсь на разработке решений для автоматизации, встраиваемых систем и API. Ищу возможность применить свои знания в проектах, связанных с научными вычислениями и промышленной автоматизацией."
+                    },
+					skills: {
+						title: "Навыки"
+					},
+					hobbies: {
+						title: "Хобби",
+						text: "Фотография, велосипед, походы, кино."
+					},
+					experience: [
+                        {
+                            title: "Software Engineer - РУП Белтаможсервис, Минск (январь 2022 – апрель 2024)",
+                            responsibilities: "Разработал и поддерживал приложение для управления парковкой (Delphi). Разработал приложение для криптографической подписи XML-документов (C#). Провел рефакторинг приложения с Delphi на Node.js+React. Создал REST API и реализовал протоколы аутентификации (JWT) для безопасного обмена данными."
+                        },
+                        {
+                            title: "Dynamic/Axapta Developer - CS&IE Data Consulting GmbH, Минск (сентябрь 2021 – декабрь 2021)",
+                            responsibilities: "Оптимизировал BI-решения, разработал автоматизированные скрипты для упрощения рутинных задач (Python, PowerShell), взаимодействовал с командами для решения проблем с данными."
+                        },
+                        {
+                            title: "Инженер - РУП Белпочта, Минск (ноябрь 2012 – июль 2021)",
+                            responsibilities: "Создал систему автоматизированного мониторинга, позволяющую отслеживать текущее выполнение задач и выводить статистику на дашборд или в Excel (PHP, MySQL). Разработал шаблоны на языке Postscript для промышленных печатных систем. Реализовал систему управления складом и генерации документов (Delphi)."
+                        }
+					],
+					experiencetitle: "Опыт работы",
+					educationtitle: "Образование",
+					education: [
+						{
+                            title: "Belarusian State University of Informatics and Radioelectronics (September 2014 – July 2019)",
+                            specializing: "Engineer of Electronic Systems, specializing in mobile programmable systems."
+                        },
+                        {
+                            title: "Belarus State Economic University (September 2000 – June 2006)",
+                            specializing: "Qualification: Merchandise Science and Product Expertise."
+                        }
+					]
+                },
+                PL: {
+                    name: "Dmitry Kiselevsky",
+					jobtitle: "PROGRAMISTA",
+                    contact: {
+                        title: "Informacje kontaktowe",
+                        phone: "Telefon: +48 453 073 737",
+						messengers: "Viber, WhatsUp: +375(29)7732110",
+                        email: "Email: kiselefsky@gmail.com",
+                        linkedin: "LinkedIn: linkedin.com/in/dmitry-kiselevsky-730b1286"
+                    },
+                    about: {
+                        title: "O mnie",
+                        text: "Doświadczony programista z ponad 5-letnim doświadczeniem w tworzeniu i utrzymaniu aplikacji w C#, Delphi oraz mikroserwisów. Specjalizuję się w opracowywaniu rozwiązań automatyzacji, systemów wbudowanych i API. Szukam możliwości zastosowania swojej wiedzy w projektach związanych z obliczeniami naukowymi i automatyzacją przemysłową."
+                    },
+					skills: {
+						title: "Umiejętności"
+					},
+					hobbies: {
+						title: "Zainteresowania",
+						text: "Fotografia, rower, piesze wędrówki, kino."
+					},
+					experience: [
+                        {
+                            title: "Software Engineer - RUE Beltamozhservice, Mińsk (Styczeń 2022 – Kwiecień 2024)",
+                            responsibilities: "Opracowałem i utrzymuję aplikacje do zarządzania parkingami (Delphi). Stworzyłem aplikację do kryptograficznego podpisywania dokumentów XML (C#). Przebudowałem aplikację z Delphi na Node.js+React. Opracowałem REST API i wdrożyłem protokoły uwierzytelniania JWT dla bezpiecznej wymiany danych."
+                        },
+                        {
+                            title: "Dynamic/Axapta Developer - CS&IE Data Consulting GmbH, Mińsk (Wrzesień 2021 – Grudzień 2021)",
+                            responsibilities: "Optymalizowałem rozwiązania BI, opracowywałem automatyczne skrypty ułatwiające rutynowe zadania (Python, PowerShell) oraz współpracowałem z zespołami w celu rozwiązywania problemów z danymi."
+                        },
+                        {
+                            title: "Engineer - RUE Belpost, Mińsk (Listopad 2012 – Lipiec 2021)",
+                            responsibilities: "Stworzyłem zautomatyzowany system monitorowania, który pozwala na śledzenie bieżącego wykonywania zadań i wyświetlanie statystyk na pulpicie nawigacyjnym lub w Excelu (PHP, MySQL). Opracowałem szablony w języku PostScript dla przemysłowych systemów drukowania. Zbudowałem system zarządzania magazynem i automatycznej generacji dokumentów (Delphi)."
+                        }
+					],
+					experiencetitle: "Doświadczenie zawodowe",
+					educationtitle: "Edukacja",
+					education: [
+						{
+                            title: "Białoruski Państwowy Uniwersytet Informatyki i Radioelektroniki (wrzesień 2014 – lipiec 2019)",
+                            specializing: "Inżynier systemów elektronicznych, specjalizacja: mobilne systemy programowalne."
+                        },
+                        {
+                            title: "Białoruski Państwowy Uniwersytet Ekonomiczny (wrzesień 2000 – czerwiec 2006)",
+                            specializing: "Kwalifikacja: Towaroznawstwo i ekspertyza towarów."
+                        }
+					]
+                }
+            };
 
-        <div class="section experience">
-            <h2>Work Experience</h2>
-            <ul>
-                <li>
-                    <h3>Software Engineer - RUE Beltamozhservice, Minsk (January 2022 – Present)</h3>
-                    <p>Developed and maintained applications for parking management (Delphi). Created an application for cryptographic XML document signing (C#). Redesigned an application from Delphi to Node.js+React. Developed REST APIs and implemented JWT authentication protocols for secure data exposure.</p>
-                </li>
-                <li>
-                    <h3>Dynamic/Axapta Developer - CS&IE Data Consulting GmbH, Minsk (September 2021 – December 2021)</h3>
-                    <p>Optimized BI solutions, developed automated scripts to simplify routine tasks (Python, PowerShell), and collaborated with teams to resolve data-related issues.</p>
-                </li>
-                <li>
-                    <h3>Engineer - RUE Belpost, Minsk (November 2012 – July 2021)</h3>
-                    <p>Created an automated monitoring system to track ongoing work and display statistics on a dashboard or export data to Excel (PHP, MySQL). Developed PostScript templates for industrial printing systems used by banks and mobile operators. Built warehouse management and automated document generation systems (Delphi).</p>
-                </li>
-            </ul>
-        </div>
+            return React.createElement('div', { className: 'container' },
+                React.createElement('h1', null, content[language].name),
+				React.createElement('h1', { className: 'jobtitle' }, content[language].jobtitle),
+                React.createElement('div', { className: 'language-buttons' },
+                    React.createElement('button', { onClick: () => setLanguage('EN') }, 'EN'),
+                    React.createElement('button', { onClick: () => setLanguage('RU') }, 'RU'),
+                    React.createElement('button', { onClick: () => setLanguage('PL') }, 'PL')
+                ),
+                React.createElement('div', { className: 'section contact-info' },
+                    React.createElement('h2', null, content[language].contact.title),
+                    React.createElement('p', null, content[language].contact.phone),
+					React.createElement('p', null, content[language].contact.messengers),
+                    React.createElement('p', null, content[language].contact.email),
+                    React.createElement('a', { href: 'https://linkedin.com/in/dmitry-kiselevsky-730b1286', target: '_blank' }, content[language].contact.linkedin)
+                ),
+                React.createElement('div', { className: 'section about' },
+                    React.createElement('h2', null, content[language].about.title),
+                    React.createElement('p', null, content[language].about.text)
+                ),
+				React.createElement('div', { className: 'section skills' },
+                    React.createElement('h2', null, content[language].skills.title),
+                    React.createElement('div', null,
+						React.createElement('span', null, 'C#'),
+						React.createElement('span', null, '.NET Framework'),
+						React.createElement('span', null, 'ASP.NET Core'),
+						React.createElement('span', null, 'Microservices'),
+						React.createElement('span', null, 'REST API'),
+						React.createElement('span', null, 'SQL'),
+						React.createElement('span', null, 'Node.js'),
+						React.createElement('span', null, 'React.JS'),
+						React.createElement('span', null, 'Microcontrollers')
+					),
+                ),
+				React.createElement('div', { className: 'section experience' },
+                    React.createElement('h2', null, content[language].experiencetitle),
+                    React.createElement('ul', null,
+                        content[language].experience.map((job, index) =>
+                            React.createElement('li', { key: index },
+                                React.createElement('h3', null, job.title),
+                                React.createElement('p', null, job.responsibilities)
+                            )
+                        )
+                    )
+                ),
+				React.createElement('div', { className: 'section education' },
+                    React.createElement('h2', null, content[language].educationtitle),
+                    React.createElement('ul', null,
+                        content[language].education.map((edu, index) =>
+                            React.createElement('li', { key: index },
+                                React.createElement('h3', null, edu.title),
+                                React.createElement('p', null, edu.specializing)
+                            )
+                        )
+                    )
+                ),
+				React.createElement('div', { className: 'section hobbies' },
+					React.createElement('h2', null, content[language].hobbies.title),
+					React.createElement('p', null, content[language].hobbies.text)
+				)
+            );
+        }
 
-        <div class="section projects">
-            <h2>Key Projects</h2>
-            <ul>
-                <li>
-                    <h3>Greenhouse Microclimate Control</h3>
-                    <p>Developed an automation system for controlling lighting, irrigation, and ventilation using microcontrollers and embedded systems.</p>
-                </li>
-            </ul>
-        </div>
-
-        <div class="section education">
-            <h2>Education</h2>
-            <div class="education-info">
-                <p><strong>Belarusian State University of Informatics and Radioelectronics</strong> (September 2014 – July 2019)</p>
-                <p>Engineer of Electronic Systems, specializing in mobile programmable systems.</p>
-            </div>
-            <div class="education-info">
-                <p><strong>Belarus State Economic University</strong> (September 2000 – June 2006)</p>
-                <p>Qualification: Merchandise Science and Product Expertise.</p>
-            </div>
-        </div>
-
-        <div class="section hobbies">
-            <h2>Hobbies</h2>
-            <p>Photography, cycling, hiking, cinema.</p>
-        </div>
-    </div>
+        ReactDOM.render(React.createElement(App), document.getElementById('root'));
+    </script>
+    
 </body>
 
 </html>
