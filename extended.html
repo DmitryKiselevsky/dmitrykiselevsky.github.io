@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Dmitry Kiselevsky</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+		
+		.jobtitle {
+            text-align: center;
+            color: #333333;
+			font-size: 1.5em;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .skills span {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .language-buttons {
+            text-align: left;
+            margin-bottom: 16px;
+        }
+		
+		stack {
+			
+        }
+
+        .language-buttons button {
+            padding: 8px 12px;
+            margin: 0 5px;
+            font-size: 12px;
+            cursor: pointer;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .language-buttons button:hover {
+            background-color: #0056b3;
+        }
+		
+		.skills span {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 5px 10px;
+            margin: 5px 5px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+		
+		.projects,
+        .experience {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .projects li,
+        .experience li {
+            margin-bottom: 15px;
+        }
+
+        .projects li h3,
+        .experience li h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .projects li p,
+        .experience li p {
+            margin: 5px 0 0;
+            font-size: 15px;
+            color: #555;
+        }
+		
+		.education-info {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+	<div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+	<script>
+        const { useState } = React;
+
+        function App() {
+            const [language, setLanguage] = useState('EN');
+
+            const content = {
+                EN: {
+                    name: "Dmitry Kiselevsky",
+					jobtitle: "Software Engineer",
+                    contact: {
+                        title: "Contact Information",
+                        phone: "Phone: +48 453 073 737",
+						messengers: "Viber, WhatsUp: +375(29)7732110",
+                        email: "Email: kiselefsky@gmail.com",
+                        linkedin: "LinkedIn: linkedin.com/in/dmitry-kiselevsky-730b1286"
+                    },
+                    about: {
+                        title: "About Me",
+                        text: "Experienced software developer with over 5 years in programming and system design. Extensive expertise in a variety of technologies including C++, C#, .NET, ASP.NET, JavaScript (Node.js, React), and X++. Proficient in developing both desktop and web applications, with a focus on automation, system integration, and electronic document management. Adept at working with both small business projects and large-scale enterprise systems, leveraging cloud services like Azure and collaborating on cross-functional teams. Strong background in integrating hardware with software, such as in automation and smart home systems."
+                    },
+					skills: {
+						title: "Skills"
+					},
+					hobbies: {
+						title: "Hobbies",
+						text: "Photography, cycling, hiking, cinema."
+					},
+					experiencetitle: "Work Experience",
+					experience: [
+                        {
+                            title: "Software Engineer - RUE Beltamozhservice, Minsk (January 2022 – April 2024)",
+							stack: ["C#", "ASP.NET Core", "Delphi", "Node.js", "React"],
+                            responsibilities: [ "Developed a parking management system and integrated solutions for the TaxFree system (Delphi)",
+                                                "Built a Windows service for digital document signing, ensuring compliance with electronic document workflow standards (C#)",
+                                                "Contributed to the electronic document management system for customs, enabling streamlined processing and tracking (C#/ASP.net Core)",
+                                                "Participated in the development of web versions of existing applications using Node.js and React for improved user accessibility (Node.js, React)"]
+                        },
+                        {
+                            title: "Dynamic/Axapta Developer - CS&IE Data Consulting GmbH, Minsk (September 2021 – December 2021)",
+							stack: ["C#", "X++", "Python", "MSSQL", "Batch Scripting"],
+                            responsibilities: [ "Optimized BI solutions (X++/C#)", 
+												"Developed automated scripts to simplify routine tasks (Python, PowerShell)",
+												"Collaborated with teams to resolve data-related issues."]
+                        },
+                        {
+                            title: "Engineer - RUE Belpost, Minsk (November 2012 – July 2021)",
+							stack: ["C#", "ASP.NET", "Delphi", "PHP", "MySQL"],
+                            responsibilities: [ "Created an automated monitoring system to track ongoing work and display statistics on a dashboard or export data to Excel (PHP, MySQL).", 
+												"Developed PostScript templates for industrial printing systems used by banks and mobile operators.", 
+												"Built warehouse management and automated document generation systems (Delphi)."]
+                        },
+						{
+                            title: "Automation and Smart Home Systems Installer - Self-employed, Minsk (November 2008 – November 2012)",
+							stack: ["C", "Assembler", "P-Cad"],
+                            responsibilities: [ "Installed and configured automatic gate systems, intercoms, and other low-voltage systems for residential and commercial properties.",
+												"Designed and implemented smart home automation systems, integrating devices for remote control and monitoring.",
+												"Optimizing control systems for gate automation and home security.",
+												"Developed custom solutions for microcontroller-based systems"]
+                        },
+						{
+                            title: "HR Systems Analyst / Automation Specialist - VDS Group, Minsk (November 2007 – November 2008)",
+							stack: ["VBA", "Delphi", "FireBird DB"],
+                            responsibilities: [ "Programmed and automated Excel spreadsheets for HR-related data analysis and reporting.",
+												"Administered and maintained the entry system database, ensuring accurate tracking of employee access.",
+												"Developed integrations between the entry system and the 1C accounting software to streamline HR and payroll processes."]
+                        },
+						{
+                            title: "System Administrator - School No. 110, Minsk (June 2007 – November 2007)",
+							stack: ["Delphi", "FireBird DB", "Batch Scripting"],
+                            responsibilities: [ "Administered the school's website, keeping it up-to-date with content and functionality.",
+												"Developed a computer-based testing system to facilitate student learning and assessments.",
+												"Participated in the development of an electronic gradebook system to streamline student performance tracking."]
+                        },
+						{
+                            title: "Prepress Technician - Belorussian Academy of Science, Minsk (June 2006 – June 2007)",
+							stack: ["VBA", "Batch Scripting"],
+                            responsibilities: [ "Batch processing of photos — Automated processing and editing of large sets of photos.",
+												"Text layout — Arranging and formatting text for print or digital publication.",
+												"Design and development of layouts — Creating and refining layouts for various print and digital projects.",
+												"Plotter cutting — Operating plotter machines for cutting materials based on vector designs."]
+                        },
+						{
+                            title: "Technician - Belarus State Economic University, Minsk (August 2000 – June 2006)",
+							stack: ["PHP", "MySQL", "VBA"],
+                            responsibilities: [ "Batch processing of photos — Automated processing and editing of large sets of photos.",
+												"Text layout — Arranging and formatting text for print or digital publication.",
+												"Design and development of layouts — Creating and refining layouts for various print and digital projects.",
+												"Plotter cutting — Operating plotter machines for cutting materials based on vector designs.",
+												"Programmed and automated Excel spreadsheets for data analysis and reporting.",
+												"Created monitoring system to track ongoing work."]
+                        }
+					],
+					educationtitle: "Education",
+					education: [
+						{
+                            title: "Belarusian State University of Informatics and Radioelectronics (September 2014 – July 2019)",
+                            specializing: "Engineer of Electronic Systems, specializing in mobile programmable systems."
+                        },
+                        {
+                            title: "Belarus State Economic University (September 2000 – June 2006)",
+                            specializing: "Qualification: Merchandise Science and Product Expertise."
+                        }
+					]
+                },
+                
+            };
+
+			const skillsArray = [
+					'C/C++',
+					'C#',
+					'.NET Framework',
+					'ASP.NET Core',
+					'PHP',
+					'Microservices',
+					'REST API',
+					'SQL',
+					'Docker',
+					'IBM MQ',
+					'Node.js',
+					'React.js',
+					'Microcontrollers'
+				];
+
+            return React.createElement('div', { className: 'container' },
+                React.createElement('h1', null, content[language].name),
+				React.createElement('h1', { className: 'jobtitle' }, content[language].jobtitle),
+                /* React.createElement('div', { className: 'language-buttons' },
+                    React.createElement('button', { onClick: () => setLanguage('EN') }, 'EN')
+                ), */
+                React.createElement('div', { className: 'section contact-info' },
+                    React.createElement('h2', null, content[language].contact.title),
+                    React.createElement('p', null, content[language].contact.phone),
+					React.createElement('p', null, content[language].contact.messengers),
+                    React.createElement('p', null, content[language].contact.email),
+                    React.createElement('a', { href: 'https://linkedin.com/in/dmitry-kiselevsky-730b1286', target: '_blank' }, content[language].contact.linkedin)
+                ),
+                React.createElement('div', { className: 'section about' },
+                    React.createElement('h2', null, content[language].about.title),
+                    React.createElement('p', null, content[language].about.text)
+                ),
+				React.createElement('div', { className: 'section skills' },
+                    React.createElement('h2', null, content[language].skills.title),
+					React.createElement('div', null,
+						skillsArray.map((skill, index) =>
+							React.createElement('span', { key: index }, skill)
+						)
+					),
+                    
+                ),
+				React.createElement('div', { className: 'section experience' },
+                    React.createElement('h2', null, content[language].experiencetitle),
+                    React.createElement('ul', null,
+                        content[language].experience.map((job, index) =>
+                            React.createElement('li', { key: index },
+                                React.createElement('h3', null, job.title),
+								React.createElement('p', { className: 'stack' }, 
+									React.createElement('strong', null, 'Technology Stack: '), 
+									Array.isArray(job.stack) ? job.stack.join(', ') : 'N/A'),
+									React.createElement('br'),
+                                React.createElement('ul', null,
+                                    job.responsibilities.map((responsibility, idx) =>
+                                        React.createElement('li', { key: idx }, responsibility)
+                                    )
+)
+                            )
+                        )
+                    )
+                ),
+				React.createElement('div', { className: 'section education' },
+                    React.createElement('h2', null, content[language].educationtitle),
+                    React.createElement('ul', null,
+                        content[language].education.map((edu, index) =>
+                            React.createElement('li', { key: index },
+                                React.createElement('h3', null, edu.title),
+                                React.createElement('p', null, edu.specializing)
+                            )
+                        )
+                    )
+                ),
+				React.createElement('div', { className: 'section hobbies' },
+					React.createElement('h2', null, content[language].hobbies.title),
+					React.createElement('p', null, content[language].hobbies.text)
+				)
+            );
+        }
+
+        ReactDOM.render(React.createElement(App), document.getElementById('root'));
+    </script>
+    
+</body>
+
+</html>
